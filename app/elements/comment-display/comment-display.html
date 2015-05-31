@@ -1,0 +1,26 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="comment-display" attributes="img date fullName titleName description">
+  <template>
+    <link rel="stylesheet" href="comment-display.css">
+
+    <div class="avatar">
+      <img class="" src="{{ img }}" alt="Avatar">
+    </div>
+
+    <div class="info">
+      <h4>{{ fullName }}</h4>
+      <h5>{{ titleName }}</h5>
+      <p class='description'>{{ description }}</p>
+      <p class='date'>{{ date }}</p>
+    </div>
+  </template>
+
+  <script>
+    (function () {
+      Polymer({
+        // define element prototype here
+      });
+    })();
+  </script>
+</polymer-element>

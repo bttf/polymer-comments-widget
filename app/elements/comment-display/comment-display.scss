@@ -1,0 +1,43 @@
+:host {
+  width: 100%;
+  display: inline-block;
+  color: #444;
+  letter-spacing: 0.5px;
+
+  .avatar {
+    float: left;
+    margin: 0 12px 12px 0;
+
+    img {
+      vertical-align: text-top;
+      border-radius: 5px;
+    }
+  }
+
+  .info {
+    float: left;
+    width: 90%;
+    margin-bottom: 24px;
+
+    h4 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    h5 {
+      margin: 4px 0 12px;
+      font-weight: 300;
+      color: #777;
+    }
+
+    .date {
+      color: #999;
+      font-weight: 300;
+    }
+
+    .description {
+      font-weight: 300;
+    }
+  }
+}
+

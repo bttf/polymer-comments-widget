@@ -1,0 +1,70 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="comments-form" attributes="comments">
+  <template>
+    <link rel="stylesheet" href="comments-form.css">
+    <core-ajax auto url="/scripts/data.json" handleAs="json" on-core-response="{{ handleComments }}"></core-ajax>
+
+    <!-- comment prompt -->
+    <h3>Leave Feedback</h3>
+
+    <form id="commentForm" class="comment-form" on-submit="{{ postComment }}">
+      <input class="form-control comment-input" type="text" name="commentInput" id="commentInput" placeholder="What do you think about this project?">
+      <button class="btn pull-right post-btn" id="postBtn">Post</button>
+    </form>
+
+    <hr>
+    <!-- /comment prompt -->
+
+    <!-- for each comment in comments -->
+    <template repeat="{{ comment in comments }}">
+
+      <comment-display
+        img="{{ comment.user.img_src }}"
+        date="{{ comment.comment.date_posted }}"
+        fullname="{{ comment.user.full_name }}"
+        titlename="{{ comment.user.title }}"
+        description="{{ comment.comment.description }}"></comment-display>
+
+    </template>
+    <!-- /comments -->
+
+  </template>
+
+  <script>
+    (function () {
+      Polymer({
+        // define element prototype here
+        handleComments: function (e, response) {
+          var comments = response.response;
+          comments.sort(function (a, b) {
+            return b.id - a.id;
+          });
+          this.comments = comments;
+        },
+
+        postComment: function(e) {
+          e.preventDefault();
+          var commentDesc = this.$.commentInput.value;
+          if (commentDesc && commentDesc !== "") {
+            this.$.commentInput.value = "";
+            var comment = {
+              "id": "5",
+              "user": {
+                "id": "5",
+                "img_src": "/images/user-img-4.png",
+                "full_name": "Anonymous",
+                "title": "Human Being"
+              },
+              "comment": {
+                "description": commentDesc,
+                "date_posted": "Today"
+              }
+            };
+            this.comments.unshift(comment);
+          }
+        }
+      });
+    })();
+  </script>
+</polymer-element>

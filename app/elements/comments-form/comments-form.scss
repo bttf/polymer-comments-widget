@@ -1,0 +1,39 @@
+:host {
+  color: #444;
+  display: block;
+  padding: 24px;
+  letter-spacing: 0.5px;
+
+  h3 {
+    font-size: 22px;
+  }
+
+  .post-btn, .post-btn:hover {
+    color: #FFF;
+    font-weight: 400;
+  }
+
+  .post-btn {
+    background-color: #f36c21;
+  }
+
+  .post-btn:hover {
+    background-color: #f68c51;
+  }
+
+  .comment-form {
+    display: inline-block;
+    width: 100%;
+    margin: 12px 0;
+  }
+
+  .comment-input {
+    float: left;
+    width: 88%;
+    margin-bottom: 12px;
+  }
+
+  hr {
+    margin: 0 0 24px 0;
+  }
+}
