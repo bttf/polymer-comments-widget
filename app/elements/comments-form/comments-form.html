@@ -2,7 +2,9 @@
 
 <polymer-element name="comments-form" attributes="comments">
   <template>
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="comments-form.css">
+
     <core-ajax auto url="/scripts/data.json" handleAs="json" on-core-response="{{ handleComments }}"></core-ajax>
 
     <!-- comment prompt -->
