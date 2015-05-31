@@ -3,6 +3,7 @@
   display: inline-block;
   color: #444;
   letter-spacing: 0.5px;
+  font-size: 14px;
 
   .avatar {
     float: left;
@@ -28,6 +29,7 @@
       margin: 4px 0 12px;
       font-weight: 300;
       color: #777;
+      font-size: 14px;
     }
 
     .date {
@@ -37,6 +39,8 @@
 
     .description {
       font-weight: 300;
+      word-spacing: 2px;
+      line-height: 1.4;
     }
   }
 }
